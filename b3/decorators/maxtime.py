@@ -4,7 +4,7 @@ import time
 __all__ = ['MaxTime']
 
 class MaxTime(b3.Decorator):
-    def __init__(self, child, max_time=0):
+    def __init__(self, child=None, max_time=0):
         super(MaxTime, self).__init__(child)
 
         self.max_time = max_time

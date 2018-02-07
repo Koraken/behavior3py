@@ -1,6 +1,5 @@
 import b3
 import uuid
-import itertools
 
 __all__ = ['BehaviorTree']
 
@@ -120,13 +119,13 @@ class BehaviorTree(object):
         curr_open_nodes = tick._open_nodes
 
         start = 0
-        for node1, node2 in itertools.izip(last_open_nodes, curr_open_nodes):
+        for node1, node2 in zip(last_open_nodes, curr_open_nodes):
             start += 1
             if node1 != node2:
                 break
 
         # - close nodes
-        for i in xrange(len(last_open_nodes)-1, start-1, -1):
+        for i in range(len(last_open_nodes)-1, start-1, -1):
             last_open_nodes[i]._close(tick);
 
         # Populate blackboard
