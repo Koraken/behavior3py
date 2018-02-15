@@ -30,16 +30,12 @@ class Tick(object):
         self.blackboard = blackboard
         self.debug = debug
 
-        self._open_nodes = []
-        self._node_count = 0
-
     def _enter_node(self, node):
         '''Called when entering a node (called by BaseNode).
 
         :param node: a node instance.
         '''
-        self._node_count += 1
-        self._open_nodes.append(node)
+        pass
 
     def _open_node(self, node):
         '''Called when opening a node (called by BaseNode).
@@ -60,7 +56,7 @@ class Tick(object):
 
         :param node: a node instance.
         '''
-        self._open_nodes.pop()
+        pass
 
     def _exit_node(self, node):
         '''Called when exiting a node (called by BaseNode).

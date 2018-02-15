@@ -12,7 +12,7 @@ class MemPriority(b3.Composite):
     def tick(self, tick):
         idx = tick.blackboard.get('running_child', tick.tree.id, self.id)
 
-        for i in xrange(idx, len(self.children)):
+        for i in range(idx, len(self.children)):
             node = self.children[i]
             status = node._execute(tick)
 
