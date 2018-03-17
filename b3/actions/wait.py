@@ -4,12 +4,12 @@ import time
 __all__ = ['Wait']
 
 class Wait(b3.Action):
-    def __init__(self, milliseconds=0):
+    def __init__(self):
         super(Wait, self).__init__()
-        self.end_time = milliseconds/1000.
 
     def open(self, tick):
         start_time = time.time()
+        self.end_time = self.properties["milliseconds"] / 1000
         tick.blackboard.set('start_time', start_time, tick.tree.id, self.id)
 
     def tick(self, tick):
