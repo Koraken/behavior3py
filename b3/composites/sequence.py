@@ -9,6 +9,8 @@ class Sequence(b3.Composite):
 
     def tick(self, tick):
         for node in self.children:
+            tick.child_id = self.children.index(node)
+            tick.parent = self
             status = node._execute(tick)
 
             if status != b3.SUCCESS:

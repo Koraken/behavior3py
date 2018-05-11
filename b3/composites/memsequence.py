@@ -14,6 +14,8 @@ class MemSequence(b3.Composite):
 
         for i in range(idx, len(self.children)):
             node = self.children[i]
+            tick.child_id = i
+            tick.parent = self
             status = node._execute(tick)
 
             if status != b3.SUCCESS:
